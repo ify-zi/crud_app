@@ -2,13 +2,14 @@
 
     $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
-    $server = $url["host"];
-    $username =$url["user"];
-    $password = $url["path"];
+    $db_server = $url["host"];
+    $db_username =$url["user"];
+    $db_password = $url["pass"];
     $db = substr($url["path"], 1);
 
-    $conn = new mysqli($server, $username, $password, $db);
+    $active_group = "default";
+    $query_builder = True;
 
-    $name=$stock=$amount="";
-
+// connect to db
+    $conn = mysqli_connect($db_server, $db_username, $db_password, $db);
     ?>
