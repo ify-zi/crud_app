@@ -20,7 +20,7 @@
             "amount INT(100) NOT NULL, ".
             "PRIMARY KEY (id)); ";
          
-          mysqli_query( $sql, $conn );
+          mysqli_query($conn, $sql );
          
          
       
