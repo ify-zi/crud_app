@@ -55,7 +55,7 @@ if(isset($_GET['edit'])){
             <td> <a href="index.php?edit=<?php echo $row['id']; ?>" class="edit-btn">EDIT</a></td>
             <td> <a href="php_code.php?del=<?php echo $row['id']; ?>" class="edit-btn">DELETE</a></td>
         </tr>
-        <?php  } }else{ echo "<p class='lead'><em> No Records were Found.</em></p>";}}else {echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
+        <?php  } }else{ echo "<p class='lead'><em> No Records were Found.</em></p>";}}else {echo "ERROR: Could not able to execute . " . mysqli_error($conn);
     }
     mysqli_close($conn); ?>
     </tbody>
