@@ -12,4 +12,20 @@
 
 // connect to db
     $conn = mysqli_connect($db_server, $db_username, $db_password, $db);
+
+         $sql = "CREATE TABLE info ( ".
+            "id INT NOT NULL AUTO_INCREMENT, ".
+            "name VARCHAR(100) NOT NULL, ".
+            "stock VARCHAR(100) NOT NULL, ".
+            "amount INT(100) NOT NULL, ".
+            "PRIMARY KEY (id)); ";
+         mysql_select_db($db);
+         $retval = mysql_query( $sql, $conn );
+         
+         if(! $retval ) {
+            die('Could not create table: ' . mysql_error());
+         }
+         echo "Table created successfully\n";
+         mysql_close($conn);
+      
     ?>
