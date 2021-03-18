@@ -19,13 +19,9 @@
             "stock VARCHAR(100) NOT NULL, ".
             "amount INT(100) NOT NULL, ".
             "PRIMARY KEY (id)); ";
-         mysql_select_db($db);
-         $retval = mysql_query( $sql, $conn );
          
-         if(! $retval ) {
-            die('Could not create table: ' . mysql_error());
-         }
-         echo "Table created successfully\n";
-         mysql_close($conn);
+          mysqli_query( $sql, $conn );
+         
+         
       
     ?>
