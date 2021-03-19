@@ -1,6 +1,6 @@
 
 <?php 
-    session_start();
+    include("php_code.php");
     include("conn.php");
     if(isset($_GET['edit'])){
         $id= $_GET['edit'];
