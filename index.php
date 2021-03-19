@@ -1,4 +1,5 @@
-<?php include("php_code.php"); ?>
+<?php include("php_code.php");
+        include("conn.php"); ?>
 <?php 
     
 if(isset($_POST['edit'])){
