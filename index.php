@@ -38,9 +38,7 @@
             <td> <?php echo $row['stock']; ?></td>
             <td> <?php echo $row['amount']; ?></td>
 
-            <td> <form action="update.php" method="GET" >
-            <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
-                <button type="submit" name="edit" value= class=" btn btn-primary">EDIT</button></form></td>
+            <td> <a href="update.php?del=<?php echo $row['id']; ?>" class="btn btn-primary">DELETE</a></td>
             <td> <a href="php_code.php?del=<?php echo $row['id']; ?>" class="btn btn-danger">DELETE</a></td>
         </tr>
         <?php  } }else{ echo "<p class='lead'><em> No Records were Found.</em></p>";}}else {echo "ERROR: Could not able to execute . " . mysqli_error($conn);
