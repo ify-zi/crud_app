@@ -1,21 +1,6 @@
 <?php session_start();
       include("php_code.php");
          ?>
-<?php 
-    
-if(isset($_GET['edit'])){
-    $id= $_GET['edit'];
-    $update = true;
-    $record = mysqli_query($conn, "SELECT * FROM info WHERE id=$id");
-
-    if(count($record)==1) {
-        $n = mysqli_fetch_array($record);
-        $name = $n['name'];
-        $stock = $n['stock'];
-        $amount = $n['amount'];
-    }
-}
-?>
 <!doctype htmL>
 <html>
 <head>
@@ -40,7 +25,6 @@ if(isset($_GET['edit'])){
 <table class="table table-striped table-dark">
 <thead>
     <tr>
-    <th scope='col'>ID</th>
     <th scope='col'>name</th>
     <th scope='col'>stock</th>
     <th scope='col'>Amount(naira)</th>
@@ -50,12 +34,13 @@ if(isset($_GET['edit'])){
 <?php while($row = mysqli_fetch_array($result)) { ?>
     <tbody>
         <tr>
-             <td> <?php echo $row['id']; ?></td>
             <td> <?php echo $row['name']; ?></td>
             <td> <?php echo $row['stock']; ?></td>
             <td> <?php echo $row['amount']; ?></td>
 
-            <td> <a href="index.php?edit=<?php echo $row['id']; ?>" class="edit-btn">EDIT</a></td>
+            <td> <form method="POST" action="php_code.php">
+                  <button name="edit" value="<?php echo $row['id']; ?>" class="btn btn-primary">EDIT</button>
+              </td>
             <td> <a href="php_code.php?del=<?php echo $row['id']; ?>" class="edit-btn">DELETE</a></td>
         </tr>
         <?php  } }else{ echo "<p class='lead'><em> No Records were Found.</em></p>";}}else {echo "ERROR: Could not able to execute . " . mysqli_error($conn);
