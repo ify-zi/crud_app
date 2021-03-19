@@ -34,11 +34,11 @@
 <?php while($row = mysqli_fetch_array($result)) { ?>
     <tbody>
         <tr>
-            <td> <?php echo $row['s_name']; ?></td>
+            <td> <?php echo $row['name']; ?></td>
             <td> <?php echo $row['stock']; ?></td>
             <td> <?php echo $row['amount']; ?></td>
 
-            <td> <a href="update.php?del=<?php echo $row['id']; ?>" class="btn btn-primary">DELETE</a></td>
+            <td> <a href="update.php?edit=<?php echo $row['id']; ?>" class="btn btn-primary">EDIT</a></td>
             <td> <a href="php_code.php?del=<?php echo $row['id']; ?>" class="btn btn-danger">DELETE</a></td>
         </tr>
         <?php  } }else{ echo "<p class='lead'><em> No Records were Found.</em></p>";}}else {echo "ERROR: Could not able to execute . " . mysqli_error($conn);
