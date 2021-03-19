@@ -19,7 +19,7 @@ if(isset($_GET['edit'])){
 <!doctype htmL>
 <html>
 <head>
-    <title> CRUD APP</title>
+    <title> STOCK APP</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -40,7 +40,7 @@ if(isset($_GET['edit'])){
 <table class="table table-striped table-dark">
 <thead>
     <tr>
-    
+    <th scope='col'>ID</th>
     <th scope='col'>name</th>
     <th scope='col'>stock</th>
     <th scope='col'>Amount(naira)</th>
@@ -50,6 +50,7 @@ if(isset($_GET['edit'])){
 <?php while($row = mysqli_fetch_array($result)) { ?>
     <tbody>
         <tr>
+             <td> <?php echo $row['id']; ?></td>
             <td> <?php echo $row['name']; ?></td>
             <td> <?php echo $row['stock']; ?></td>
             <td> <?php echo $row['amount']; ?></td>
