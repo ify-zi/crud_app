@@ -45,7 +45,7 @@
     }
     mysqli_close($conn); ?>
     </tbody>
-    
+    <?php   endwhile ?>
 </table>
 </div>
 </div>
