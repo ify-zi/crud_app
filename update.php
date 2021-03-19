@@ -8,7 +8,7 @@
         $record = mysqli_query($conn, "SELECT * FROM info WHERE id=$id");
     
     
-        if(count($record)==1) {
+        if(mysqli_num_rows($record)==1) {
             $n = mysqli_fetch_array($record);
             $name = $n['s_name'];
             $stock = $n['stock'];
