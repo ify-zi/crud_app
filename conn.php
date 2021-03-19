@@ -20,6 +20,6 @@
             amount INT(100) NOT NULL)";
          //mysql_select_db($db);
          mysqli_query($conn, $sql );
-$conn -> close();
+
          
     ?>
