@@ -14,7 +14,7 @@
     $conn = mysqli_connect($db_server, $db_username, $db_password, $db);
 
          $sql = "CREATE TABLE info ( ".
-            "id INT NOT NULL AUTO_INCREMENT, ".
+            "id INT(11) NOT NULL AUTO_INCREMENT, ".
             "name VARCHAR(100) NOT NULL, ".
             "stock VARCHAR(100) NOT NULL, ".
             "amount INT(100) NOT NULL, ".
@@ -22,6 +22,5 @@
          
           mysqli_query($conn, $sql );
          
-         
-      
+  
     ?>
