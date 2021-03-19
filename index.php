@@ -1,5 +1,17 @@
 <?php session_start();
       include("php_code.php");
+      
+if(isset($_GET['edit'])){
+    $id= $_GET['id'];
+    $update = true;
+    $record = mysqli_query($conn, "SELECT * FROM info WHERE id=$id");
+
+    if(count($record)==1) {
+        $n = mysqli_fetch_array($record);
+        $name = $n['name'];
+        $stock = $n['stock'];
+        $amount = $n['amount'];
+}
          ?>
 <!doctype htmL>
 <html>
@@ -38,8 +50,8 @@
             <td> <?php echo $row['stock']; ?></td>
             <td> <?php echo $row['amount']; ?></td>
 
-            <td> <form  action="php_code.php">
-                 <input type="hidden" name="edit" value="<?php echo $row['id']; ?>">
+            <td> <form>
+                 <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
                   <button type="submit" name="edit" class="btn btn-primary">EDIT</button>
               </form>
             </td>
