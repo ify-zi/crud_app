@@ -1,7 +1,7 @@
 
 <?php 
+    require_once "conn.php";
     include("php_code.php");
-    include("conn.php");
     if(isset($_GET['edit'])){
         $id= $_GET['edit'];
         $update = true;
@@ -15,7 +15,7 @@
             $amount = $n['amount'];
           
         }
-        
+
     }
     ?><!doctype htmL>
 <html>
@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-
+<h1> Edit</h1>
 <div class="wrapper">
   <div class="container-fluid">
   <div class="row">
@@ -41,7 +41,7 @@
                 ?>
         </div>
         <?php endif ?>
-        <input type="hidden" name="edit" value="<?php echo $id; ?>">  
+        <input type="hidden" name="id" value="<?php echo $id; ?>">  
   <div class="col-md-6">
     <label for="name" class="form-label">NAME</label>
     <input type="text" class="form-control"  name="name" id="name" value="<?php echo $name; ?>" >

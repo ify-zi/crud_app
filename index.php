@@ -1,5 +1,5 @@
-<?php include("php_code.php"); 
-       include("conn.php");?>
+<?php include("php_code.php"); ?>
+
 <!doctype htmL>
 <html>
 <head>
@@ -45,6 +45,7 @@
     }
     mysqli_close($conn); ?>
     </tbody>
+    
 </table>
 </div>
 </div>
