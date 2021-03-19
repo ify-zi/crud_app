@@ -1,6 +1,5 @@
 
 <?php 
-    require_once "conn.php";
     include("php_code.php");
     if(isset($_GET['edit'])){
         $id= $_GET['edit'];
