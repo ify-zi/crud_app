@@ -39,8 +39,9 @@
             <td> <?php echo $row['amount']; ?></td>
 
             <td> <form method="POST" action="php_code.php">
-                  <button name="edit" value="<?php echo $row['id']; ?>" class="btn btn-primary">EDIT</button>
-              </td>
+                  <button type= "hidden" name="edit" value="<?php echo $row['id']; ?>" class="btn btn-primary">EDIT</button>
+              </form>
+            </td>
             <td> <a href="php_code.php?del=<?php echo $row['id']; ?>" class="edit-btn">DELETE</a></td>
         </tr>
         <?php  } }else{ echo "<p class='lead'><em> No Records were Found.</em></p>";}}else {echo "ERROR: Could not able to execute . " . mysqli_error($conn);
