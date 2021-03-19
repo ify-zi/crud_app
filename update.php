@@ -1,22 +1,23 @@
-<?php include("php_code.php"); ?>
+
 <?php 
+    session_start();
+    require_once "conn.php";
+    if(isset($_GET['edit'])){
+        $id= $_GET['edit'];
+        $update = true;
+        $record = mysqli_query($conn, "SELECT * FROM info WHERE id=$id");
     
-if(isset($_GET['edit'])){
-    $id= $_GET['edit'];
-    $update = true;
-    $record = mysqli_query($conn, "SELECT * FROM info WHERE id=$id");
-
-
-    if(count($record)==1) {
-        $n = mysqli_fetch_array($record);
-        $name = $n['name'];
-        $stock = $n['stock'];
-        $amount = $n['amount'];
-      
+    
+        if(count($record)==1) {
+            $n = mysqli_fetch_array($record);
+            $name = $n['name'];
+            $stock = $n['stock'];
+            $amount = $n['amount'];
+          
+        }
+        
     }
-}
-?>
-<!doctype htmL>
+    ?><!doctype htmL>
 <html>
 <head>
     <title> CRUD APP</title>
@@ -28,45 +29,6 @@ if(isset($_GET['edit'])){
 </head>
 <body>
 
-<?php if($result= mysqli_query($conn,"SELECT * FROM info")){
-    if(mysqli_num_rows($result) > 0){?>
-<div class="wrapper">
-  <div class="container-fluid">
-  <div class="row">
-  <div class="col-md-6">
-  <div class="page-header clearfix">
-  <h3 class="pull-left"> Stock Sales</h3>
-  <div>
-<table class="table table-striped table-dark">
-<thead>
-    <tr>
-    
-    <th scope='col'>name</th>
-    <th scope='col'>stock</th>
-    <th scope='col'>Amount(naira)</th>
-    <th scope="col">Action</th>
-    </tr>
-</thead>
-<?php while($row = mysqli_fetch_array($result)) { ?>
-    <tbody>
-        <tr>
-            <td> <?php echo $row['name']; ?></td>
-            <td> <?php echo $row['stock']; ?></td>
-            <td> <?php echo $row['amount']; ?></td>
-
-            <td> <a href="update.php?edit=<?php echo $row['id']; ?>" class="edit-btn">EDIT</a></td>
-            <td> <a href="php_code.php?del=<?php echo $row['id']; ?>" class="edit-btn">DELETE</a></td>
-        </tr>
-        <?php  } }else{ echo "<p class='lead'><em> No Records were Found.</em></p>";}}else {echo "ERROR: Could not able to execute . " . mysqli_error($conn);
-    }
-    mysqli_close($conn); ?>
-    </tbody>
-    
-</table>
-</div>
-</div>
-</div>
-</div>
 <div class="wrapper">
   <div class="container-fluid">
   <div class="row">
