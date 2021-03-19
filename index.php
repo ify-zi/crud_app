@@ -1,6 +1,5 @@
-<?php include("conn.php");
-       include("php_code.php"); ?>
-       
+<?php include("php_code.php"); 
+      ?>
 
 <!doctype htmL>
 <html>
