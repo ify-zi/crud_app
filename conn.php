@@ -20,6 +20,6 @@
             amount INT(100) NOT NULL, 
             PRIMARY KEY (id)) ";
          //mysql_select_db($db);
-         mysqli_query( $sql, $conn );
+         mysqli_query($conn, $sql );
          
     ?>
