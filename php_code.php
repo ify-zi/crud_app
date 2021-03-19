@@ -57,6 +57,5 @@ if(isset($_POST['edit'])){
         $name = $n['name'];
         $stock = $n['stock'];
         $amount = $n['amount'];
-    }
 }
 ?>
