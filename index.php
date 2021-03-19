@@ -1,5 +1,5 @@
 <?php include("php_code.php");
-        include("conn.php"); ?>
+        session_start(); ?>
 <?php 
     
 if(isset($_GET['edit'])){
