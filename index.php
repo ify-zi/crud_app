@@ -1,11 +1,25 @@
-<?php session_start();
-      include("php_code.php");
-  
-         ?>
+<?php include("php_code.php"); ?>
+<?php 
+    
+if(isset($_GET['edit'])){
+    $id= $_GET['edit'];
+    $update = true;
+    $record = mysqli_query($conn, "SELECT * FROM info WHERE id=$id");
+
+
+    if(count($record)==1) {
+        $n = mysqli_fetch_array($record);
+        $name = $n['name'];
+        $stock = $n['stock'];
+        $amount = $n['amount'];
+      
+    }else { echo "error";}
+}
+?>
 <!doctype htmL>
 <html>
 <head>
-    <title> STOCK APP</title>
+    <title> CRUD APP</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -26,6 +40,7 @@
 <table class="table table-striped table-dark">
 <thead>
     <tr>
+    
     <th scope='col'>name</th>
     <th scope='col'>stock</th>
     <th scope='col'>Amount(naira)</th>
@@ -39,11 +54,7 @@
             <td> <?php echo $row['stock']; ?></td>
             <td> <?php echo $row['amount']; ?></td>
 
-            <td> <form>
-                 <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
-                  <button type="submit" name="edit" class="btn btn-primary">EDIT</button>
-              </form>
-            </td>
+            <td> <a href="index.php?edit=<?php echo $row['id']; ?>" class="edit-btn">EDIT</a></td>
             <td> <a href="php_code.php?del=<?php echo $row['id']; ?>" class="edit-btn">DELETE</a></td>
         </tr>
         <?php  } }else{ echo "<p class='lead'><em> No Records were Found.</em></p>";}}else {echo "ERROR: Could not able to execute . " . mysqli_error($conn);

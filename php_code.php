@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    require_once "conn.php";
+    include('conn.php');
    
 
     $name="";
@@ -46,5 +46,4 @@
         $_SESSION['msg']= "Record Deleted";
         header('location: index.php');
     }
-
 ?>
