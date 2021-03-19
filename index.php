@@ -1,21 +1,4 @@
 <?php include("php_code.php"); ?>
-<?php 
-    
-if(isset($_GET['edit'])){
-    $id= $_GET['edit'];
-    $update = true;
-    $record = mysqli_query($conn, "SELECT * FROM info WHERE id=$id");
-
-
-    if(count($record)==1) {
-        $n = mysqli_fetch_array($record);
-        $name = $n['name'];
-        $stock = $n['stock'];
-        $amount = $n['amount'];
-      
-    }
-}
-?>
 <!doctype htmL>
 <html>
 <head>
