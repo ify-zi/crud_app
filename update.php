@@ -41,7 +41,7 @@
                 ?>
         </div>
         <?php endif ?>
-        <input type="hidden" name="id" value="<?php echo $id; ?>">  
+        <input type="hidden" name="edit" value="<?php echo $id; ?>">  
   <div class="col-md-6">
     <label for="name" class="form-label">NAME</label>
     <input type="text" class="form-control"  name="name" id="name" value="<?php echo $name; ?>" >
