@@ -1,7 +1,7 @@
 
 <?php 
     session_start();
-    require_once "conn.php";
+    include("conn.php");
     if(isset($_GET['edit'])){
         $id= $_GET['edit'];
         $update = true;
