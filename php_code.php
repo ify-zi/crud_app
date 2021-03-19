@@ -3,12 +3,6 @@
     include("conn.php");
    
 
-    $name="";
-    $stock="";
-    $amount="";
-    $id=0;
-    $update= false;
-
     if(isset($_POST['save'])){
         if(!empty($_POST['name'])){
             $name= $_POST['name'];
