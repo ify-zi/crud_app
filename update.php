@@ -1,6 +1,6 @@
 
 <?php 
-    include("conn.php");
+    
     include("php_code.php");
     if(isset($_GET['edit'])){
         $id= $_GET['edit'];
