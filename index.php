@@ -40,7 +40,7 @@
 
             <td> <form  action="php_code.php">
                  <input type="hidden" name="edit" value="<?php echo $row['id']; ?>">
-                  <button name="edit" class="btn btn-primary">EDIT</button>
+                  <button type="submit" name="edit" class="btn btn-primary">EDIT</button>
               </form>
             </td>
             <td> <a href="php_code.php?del=<?php echo $row['id']; ?>" class="edit-btn">DELETE</a></td>
