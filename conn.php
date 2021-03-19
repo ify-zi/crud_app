@@ -11,15 +11,15 @@
     $query_builder = True;
 
 // connect to db
-    $conn = mysqli_connect($db_server, $db_username, $db_password, $db);
+    $conn =  new mysqli($db_server, $db_username, $db_password, $db);
     
          $sql = "CREATE TABLE info ( 
-            id INT(30) NOT NULL AUTO_INCREMENT, 
+            id INT(30)  UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT, 
             s_name VARCHAR(100) NOT NULL, 
             stock VARCHAR(100) NOT NULL, 
-            amount INT(100) NOT NULL, 
-            PRIMARY KEY (id)) ";
+            amount INT(100) NOT NULL)";
          //mysql_select_db($db);
          mysqli_query($conn, $sql );
+$conn -> close();
          
     ?>
