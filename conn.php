@@ -12,13 +12,14 @@
 
 // connect to db
     $conn = mysqli_connect($db_server, $db_username, $db_password, $db);
+    if($conn == true){
          $sql = "CREATE TABLE info ( ".
             "id INT NOT NULL AUTO_INCREMENT, ".
-            "name VARCHAR(100) NOT NULL, ".
+            "s_name VARCHAR(100) NOT NULL, ".
             "stock VARCHAR(100) NOT NULL, ".
             "amount INT(100) NOT NULL, ".
             "PRIMARY KEY (id)); ";
          //mysql_select_db($db);
          mysqli_query( $sql, $conn );
-       
+    }
     ?>

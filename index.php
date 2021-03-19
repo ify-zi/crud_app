@@ -34,12 +34,12 @@
 <?php while($row = mysqli_fetch_array($result)) { ?>
     <tbody>
         <tr>
-            <td> <?php echo $row['name']; ?></td>
+            <td> <?php echo $row['s_name']; ?></td>
             <td> <?php echo $row['stock']; ?></td>
             <td> <?php echo $row['amount']; ?></td>
 
-            <td> <a href="update.php?edit=<?php echo $row['id']; ?>" class="edit-btn">EDIT</a></td>
-            <td> <a href="php_code.php?del=<?php echo $row['id']; ?>" class="edit-btn">DELETE</a></td>
+            <td> <a href="update.php?edit=<?php echo $row['id']; ?>" class=" btn btn-primary">EDIT</a></td>
+            <td> <a href="php_code.php?del=<?php echo $row['id']; ?>" class="btn btn-danger">DELETE</a></td>
         </tr>
         <?php  } }else{ echo "<p class='lead'><em> No Records were Found.</em></p>";}}else {echo "ERROR: Could not able to execute . " . mysqli_error($conn);
     }
@@ -66,15 +66,15 @@
         <input type="hidden" name="id" value="<?php echo $id; ?>">  
   <div class="col-md-6">
     <label for="name" class="form-label">NAME</label>
-    <input type="text" class="form-control"  name="name" id="name" value="<?php echo $name; ?>" >
+    <input type="text" class="form-control"  name="name"  value="<?php echo $name; ?>" >
   </div>
   <div class="col-md-6">
     <label for="stock" class="form-label">STOCK</label>
-    <input type="text" name="stock" class="form-control" id="stock" value="<?php echo $stock; ?>">
+    <input type="text" name="stock" class="form-control"  value="<?php echo $stock; ?>">
   </div>
   <div class="col-md-6">
     <label for="amount" class="form-label">Amount Paid</label>
-    <input type="text" name="amount" class="form-control" id="amount" value="<?php echo $amount; ?>">
+    <input type="text" name="amount" class="form-control"  value="<?php echo $amount; ?>">
     </div>
   <br>
   <?php if($update == true): ?>

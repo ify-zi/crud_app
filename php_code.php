@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    include('conn.php');
+    include("conn.php");
    
 
     $name="";
@@ -25,7 +25,7 @@
         }else{
             $_SESSION['msg'] = "field can't be empty";
         }
-        mysqli_query($conn,"INSERT INTO info(name, stock, amount) VALUES('$name', '$stock', '$amount')");
+        mysqli_query($conn,"INSERT INTO info( s_name, stock, amount) VALUES('$name', '$stock', '$amount')");
         $_SESSION['msg'] = "Saved Successfully";
         header('location: index.php');
     }
@@ -35,7 +35,7 @@
        $name = $_POST['name'];
        $stock = $_POST['stock'];
        $amount = $_POST['amount'];
-       mysqli_query($conn,"UPDATE info SET name='$name', stock='$stock', amount='$amount' WHERE id= $id");
+       mysqli_query($conn,"UPDATE info SET s_name='$name', stock='$stock', amount='$amount' WHERE id= $id");
         $_SESSION['msg'] = "Saved Successfully";
         header('location: index.php');
     }
