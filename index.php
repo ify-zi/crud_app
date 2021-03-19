@@ -2,8 +2,8 @@
         include("conn.php"); ?>
 <?php 
     
-if(isset($_POST['edit'])){
-    $id= $_POST['edit'];
+if(isset($_GET['edit'])){
+    $id= $_GET['edit'];
     $update = true;
     $record = mysqli_query($conn, "SELECT * FROM info WHERE id=$id");
 
